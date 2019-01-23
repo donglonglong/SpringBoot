@@ -15,22 +15,22 @@ import static org.hamcrest.Matchers.equalTo;
 
 /**
  * HelloController Test.
- *
+ * 
  * @since 1.0.0 2017年11月20日
- * @author <a href="https://waylau.com">Way Lau</a>
+ * @author <a href="https://waylau.com">Way Lau</a> 
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 public class HelloControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Test
-    public void testHello() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Hello World!")));
-    }
+	@Autowired
+	private MockMvc mockMvc;
+	
+	@Test
+	public void testHello() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
+			.andExpect(status().isOk())
+			.andExpect(content().string(equalTo("Hello World!")));
+	}
 }
